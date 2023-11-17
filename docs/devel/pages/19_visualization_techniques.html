@@ -339,7 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="viz-chapter" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualization</span></span></h1>
+<h1 class="title"><span id="sec-viz-chapter" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Visualization</span></span></h1>
 </div>
 
 
@@ -476,15 +476,15 @@ document.addEventListener("click", function (event) {
 </div>
 </div>
 </div>
-<p>Further methods of application can be found in the chapters @ref(qc) and @ref(richness) and in a few <a href="https://github.com/davismcc/scater_tutorials_open_data">external tutorials</a> with open data. Additionally, <code>rowData</code> and <code>colData</code> allow manipulation and subsetting of large data sets into smaller units, as explained in chapter @ref(datamanipulation).</p>
+<p>Further methods of application can be found in the chapters <a href="12_quality_control.html#sec-qc"><span>Section&nbsp;4.3</span></a> and <a href="14_alpha_diversity.html#sec-richness"><span>Section&nbsp;6.1.1</span></a> and in a few <a href="https://github.com/davismcc/scater_tutorials_open_data">external tutorials</a> with open data. Additionally, <code>rowData</code> and <code>colData</code> allow manipulation and subsetting of large data sets into smaller units, as explained in chapter <span class="quarto-unresolved-ref">?sec-datamanipulation</span>.</p>
 </section><section id="viewing-abundance-and-prevalence-patterns" class="level3" data-number="13.1.2"><h3 data-number="13.1.2" class="anchored" data-anchor-id="viewing-abundance-and-prevalence-patterns">
 <span class="header-section-number">13.1.2</span> Viewing abundance and prevalence patterns</h3>
 <p>Prior-to-analysis exploration may involve questions such as how microorganisms are distributed across samples (abundance) and what microorganisms are present in most of the samples (prevalence). The information on abundance and prevalence can be summarized into a <strong>jitter</strong> or <strong>density plot</strong> and a <strong>tree</strong>, respectively, with the <em>miaViz</em> package.</p>
-<p>Specifically, the functions <code>plotAbundance</code>, <code>plotAbundanceDensity</code> and <code>plotRowTree</code> are used, and examples on their usage are discussed throughout chapter @ref(quality-control).</p>
+<p>Specifically, the functions <code>plotAbundance</code>, <code>plotAbundanceDensity</code> and <code>plotRowTree</code> are used, and examples on their usage are discussed throughout chapter <a href="12_quality_control.html"><span>Chapter&nbsp;4</span></a>.</p>
 </section></section><section id="diversity-estimation" class="level2" data-number="13.2"><h2 data-number="13.2" class="anchored" data-anchor-id="diversity-estimation">
 <span class="header-section-number">13.2</span> Diversity estimation</h2>
-<p>Alpha diversity is commonly measured as one of the diversity indices explained in chapter @ref(community-diversity). Because the focus lies on each sample separately, one-dimensional plots, such as <strong>scatter</strong>, <strong>violin</strong> and <strong>box plots</strong>, are suitable.</p>
-<p>Beta diversity is generally evaluated as one of the dissimilarity indices reported in chapter @ref(community-similarity). Unlike alpha diversity, samples are compared collectively to estimate the heterogeneity across them, therefore multidimensional plots, such as <strong>Shepard</strong> and <strong>ordination plots</strong> are suitable.</p>
+<p>Alpha diversity is commonly measured as one of the diversity indices explained in chapter <a href="14_alpha_diversity.html"><span>Chapter&nbsp;6</span></a>. Because the focus lies on each sample separately, one-dimensional plots, such as <strong>scatter</strong>, <strong>violin</strong> and <strong>box plots</strong>, are suitable.</p>
+<p>Beta diversity is generally evaluated as one of the dissimilarity indices reported in chapter <a href="20_beta_diversity.html"><span>Chapter&nbsp;7</span></a>. Unlike alpha diversity, samples are compared collectively to estimate the heterogeneity across them, therefore multidimensional plots, such as <strong>Shepard</strong> and <strong>ordination plots</strong> are suitable.</p>
 <table class="table">
 <colgroup>
 <col style="width: 31%">
@@ -556,7 +556,7 @@ document.addEventListener("click", function (event) {
 </div>
 </div>
 </div>
-<p>The analogous output in the form of a violin plot is obtained in chapter @ref(faith-diversity). In addition, box plots that group samples according to certain information, such as origin, sex, age and health condition, can be labeled with p-values for significant differences with the package <em>ggsignif</em> package, as shown in chapter @ref(estimate-diversity).</p>
+<p>The analogous output in the form of a violin plot is obtained in chapter <a href="14_alpha_diversity.html#sec-faith-diversity"><span>Section&nbsp;6.1.3</span></a>. In addition, box plots that group samples according to certain information, such as origin, sex, age and health condition, can be labeled with p-values for significant differences with the package <em>ggsignif</em> package, as shown in chapter <a href="14_alpha_diversity.html#sec-estimate-diversity"><span>Section&nbsp;6.1.2</span></a>.</p>
 </section><section id="beta-diversity-with-shepard-and-coordination-plots" class="level3" data-number="13.2.2"><h3 data-number="13.2.2" class="anchored" data-anchor-id="beta-diversity-with-shepard-and-coordination-plots">
 <span class="header-section-number">13.2.2</span> Beta diversity with Shepard and coordination plots</h3>
 <p>The <em>scater</em> package offers the general function <code>plotReducedDim</code>. In its basic form, it takes a <code>TSE</code> object and the results on sample similarity stored in the same object, which can be evaluated with the following coordination methods:</p>
@@ -567,7 +567,7 @@ document.addEventListener("click", function (event) {
 <li><code>runTSNE</code></li>
 <li><code>runUMAP</code></li>
 </ul>
-<p>Since these clustering techniques allow for multiple coordinates or components, <strong>coordination plots</strong> can also span multiple dimensions, which is explained in chapter @ref(extras).</p>
+<p>Since these clustering techniques allow for multiple coordinates or components, <strong>coordination plots</strong> can also span multiple dimensions, which is explained in chapter <a href="97_extra_materials.html"><span>Appendix&nbsp;A</span></a>.</p>
 <div class="cell" data-layout-align="center" data-hash="19_visualization_techniques_cache/html/unnamed-chunk-7_c86392b21089052ce99c099b3a95b822">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># perform NMDS coordination method</span></span>
 <span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="fu">runNMDS</span><span class="op">(</span><span class="va">tse</span>,</span>
@@ -625,12 +625,12 @@ document.addEventListener("click", function (event) {
 </div>
 </div>
 </div>
-<p>For similar examples, readers are referred to chapter @ref(community-similarity). Further material on the graphic capabilities of <em>patchwork</em> is available in its <a href="https://patchwork.data-imaginist.com/articles/patchwork.html">official package tutorial</a>.</p>
+<p>For similar examples, readers are referred to chapter <a href="20_beta_diversity.html"><span>Chapter&nbsp;7</span></a>. Further material on the graphic capabilities of <em>patchwork</em> is available in its <a href="https://patchwork.data-imaginist.com/articles/patchwork.html">official package tutorial</a>.</p>
 </section></section><section id="statistical-analysis" class="level2" data-number="13.3"><h2 data-number="13.3" class="anchored" data-anchor-id="statistical-analysis">
 <span class="header-section-number">13.3</span> Statistical analysis</h2>
 <section id="heatmaps" class="level3" data-number="13.3.1"><h3 data-number="13.3.1" class="anchored" data-anchor-id="heatmaps">
 <span class="header-section-number">13.3.1</span> Heatmaps</h3>
-<p>As described in chapter @ref(visual-composition), bar plots and heatmaps can offer a useful insight into the composition of a community. Simple methods involve the functions <code>plotAbundance</code> and <code>geom_tile</code> in combination with <code>scale_fill_gradientn</code> from the packages <em>miaViz</em> and <em>ggplot2</em>, respectively.</p>
+<p>As described in chapter <a href="21_microbiome_community.html#sec-visual-composition"><span>Section&nbsp;8.1</span></a>, bar plots and heatmaps can offer a useful insight into the composition of a community. Simple methods involve the functions <code>plotAbundance</code> and <code>geom_tile</code> in combination with <code>scale_fill_gradientn</code> from the packages <em>miaViz</em> and <em>ggplot2</em>, respectively.</p>
 <p>For instance, below the composition of multiple samples (x axis) is reported in terms of relative abundances (y axis) for the top 10 taxa at the Order rank. Bar plots and heatmaps with analogous information at the Phylum level are available in the aforementioned chapter.</p>
 <div class="cell" data-layout-align="center" data-hash="19_visualization_techniques_cache/html/plotAbundance1_ec84259f52cc1bc04d82bf05d8d296a7">
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># agglomerate tse by Order</span></span>
@@ -1061,7 +1061,7 @@ document.addEventListener("click", function (event) {
 <span></span>
 <span><span class="va">plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Heatmaps find several other applications in biclustering and multi-assay analyses. These are discussed further in chapters @ref(clustering) and @ref(multi-assay-analyses).</p>
+<p>Heatmaps find several other applications in biclustering and multi-assay analyses. These are discussed further in chapters <a href="24_clustering.html"><span>Chapter&nbsp;9</span></a> and <a href="23_multi-assay_analyses.html"><span>Chapter&nbsp;12</span></a>.</p>
 
 
 </section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">

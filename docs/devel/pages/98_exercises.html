@@ -325,7 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li>
 <a href="#data-containers-treese" id="toc-data-containers-treese" class="nav-link" data-scroll-target="#data-containers-treese"><span class="header-section-number">16.3</span> Data containers: TreeSE</a>
   <ul class="collapse">
-<li><a href="#construct-TreeSE" id="toc-construct-TreeSE" class="nav-link" data-scroll-target="#construct-TreeSE"><span class="header-section-number">16.3.1</span> Constructing a data object</a></li>
+<li><a href="#sec-construct-TreeSE" id="toc-sec-construct-TreeSE" class="nav-link" data-scroll-target="#sec-construct-TreeSE"><span class="header-section-number">16.3.1</span> Constructing a data object</a></li>
   <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data"><span class="header-section-number">16.3.2</span> Importing data</a></li>
   <li><a href="#preliminary-exploration" id="toc-preliminary-exploration" class="nav-link" data-scroll-target="#preliminary-exploration"><span class="header-section-number">16.3.3</span> Preliminary exploration</a></li>
   <li><a href="#assay-retrieval" id="toc-assay-retrieval" class="nav-link" data-scroll-target="#assay-retrieval"><span class="header-section-number">16.3.4</span> Assay retrieval</a></li>
@@ -376,8 +376,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#differential-abundance" id="toc-differential-abundance" class="nav-link" data-scroll-target="#differential-abundance"><span class="header-section-number">16.8</span> Differential abundance</a>
   <ul class="collapse">
 <li><a href="#standard-analysis-with-aldex2" id="toc-standard-analysis-with-aldex2" class="nav-link" data-scroll-target="#standard-analysis-with-aldex2"><span class="header-section-number">16.8.1</span> Standard analysis with ALDEx2</a></li>
-  <li><a href="#control-daa-confounders" id="toc-control-daa-confounders" class="nav-link" data-scroll-target="#control-daa-confounders"><span class="header-section-number">16.8.2</span> Controlling for confounders</a></li>
-  <li><a href="#compare-daa-methods" id="toc-compare-daa-methods" class="nav-link" data-scroll-target="#compare-daa-methods"><span class="header-section-number">16.8.3</span> Comparing methods</a></li>
+  <li><a href="#sec-control-daa-confounders" id="toc-sec-control-daa-confounders" class="nav-link" data-scroll-target="#sec-control-daa-confounders"><span class="header-section-number">16.8.2</span> Controlling for confounders</a></li>
+  <li><a href="#sec-compare-daa-methods" id="toc-sec-compare-daa-methods" class="nav-link" data-scroll-target="#sec-compare-daa-methods"><span class="header-section-number">16.8.3</span> Comparing methods</a></li>
   <li><a href="#workflow-1" id="toc-workflow-1" class="nav-link" data-scroll-target="#workflow-1"><span class="header-section-number">16.8.4</span> Workflow 1</a></li>
   <li><a href="#workflow-2" id="toc-workflow-2" class="nav-link" data-scroll-target="#workflow-2"><span class="header-section-number">16.8.5</span> Workflow 2</a></li>
   </ul>
@@ -404,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="exercises" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Exercises</span></span></h1>
+<h1 class="title"><span id="sec-exercises" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Exercises</span></span></h1>
 </div>
 
 
@@ -543,8 +543,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Well done! You can now use an advanced feature of Quarto such as parameters. If you got stuck, <a href="https://quarto.org/docs/computations/parameters.html#knitr">here</a> you can find more information about parameter definition and usage.</p>
 </section></section></section><section id="data-containers-treese" class="level2" data-number="16.3"><h2 data-number="16.3" class="anchored" data-anchor-id="data-containers-treese">
 <span class="header-section-number">16.3</span> Data containers: TreeSE</h2>
-<p>TreeSE containers represent the working unit of the mia package. In the following exercises we learn how to construct, explore and work with them. A few demo datasets can be imported with mia and can be accessed as explained in chapter @ref(example-data).</p>
-<section id="construct-TreeSE" class="level3" data-number="16.3.1"><h3 data-number="16.3.1" class="anchored" data-anchor-id="construct-TreeSE">
+<p>TreeSE containers represent the working unit of the mia package. In the following exercises we learn how to construct, explore and work with them. A few demo datasets can be imported with mia and can be accessed as explained in chapter <a href="04_containers.html#sec-example-data"><span>Section&nbsp;2.3</span></a>.</p>
+<section id="sec-construct-TreeSE" class="level3" data-number="16.3.1"><h3 data-number="16.3.1" class="anchored" data-anchor-id="sec-construct-TreeSE">
 <span class="header-section-number">16.3.1</span> Constructing a data object</h3>
 <p>Here we cover how to construct a TreeSE from CSV files, using the components of OKeefeDSData from the microbiomeDataSets package as an example dataset.</p>
 <ol type="1">
@@ -559,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Usefuls functions: DataFrame, TreeSummarizedExperiment, matrix, rownames, colnames, SimpleList</p>
 </section><section id="importing-data" class="level3" data-number="16.3.2"><h3 data-number="16.3.2" class="anchored" data-anchor-id="importing-data">
 <span class="header-section-number">16.3.2</span> Importing data</h3>
-<p>Raw data of different types can be imported as a TreeSE with a number of functions explained in chapter @ref(import-from-file). You can also check the <a href="https://microbiome.github.io/mia/reference/index.html">function reference in the mia package</a>.</p>
+<p>Raw data of different types can be imported as a TreeSE with a number of functions explained in chapter <a href="04_containers.html#sec-import-from-file"><span>Section&nbsp;2.4.2</span></a>. You can also check the <a href="https://microbiome.github.io/mia/reference/index.html">function reference in the mia package</a>.</p>
 <ol type="1">
 <li>Get familiar with the <a href="https://github.com/microbiome/data">microbiome data repository</a> and read the instructions in its <a href="https://github.com/microbiome/data#training-microbiome-datasets">README</a> to import and construct datasets from there.<br>
 </li>
@@ -592,7 +592,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li>Retrieve the first assay of the TreeSE with <code>assay</code>, where the second argument can be either the name or the index of the desired assay.</li>
 </ol>
-<p>Well done! You can now locate and retrieve individual assays of a TreeSE. If you got stuck, you can refer to chapter @ref(assay-slot) of this book.</p>
+<p>Well done! You can now locate and retrieve individual assays of a TreeSE. If you got stuck, you can refer to chapter <a href="04_containers.html#sec-assay-slot"><span>Section&nbsp;2.2.1</span></a> of this book.</p>
 </section><section id="sample-information" class="level3" data-number="16.3.5"><h3 data-number="16.3.5" class="anchored" data-anchor-id="sample-information">
 <span class="header-section-number">16.3.5</span> Sample information</h3>
 <ol type="1">
@@ -621,10 +621,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <strong>Extra</strong>: Create a taxonomy tree based on the taxonomy mappings with <code>addTaxonomyTree</code> and display its content with <code>taxonomyTree</code> and <code>ggtree</code>.</li>
 </ol>
-<p>If you got stuck, you can look up chapters @fref{datamanipulation} and @ref(fly-tree) on how to pick specific abundances and generate row trees, respectively.</p>
+<p>If you got stuck, you can look up chapters @fref{datamanipulation} and <a href="11_taxonomic_information.html#sec-fly-tree"><span>Section&nbsp;5.2.1</span></a> on how to pick specific abundances and generate row trees, respectively.</p>
 </section><section id="other-elements" class="level3" data-number="16.3.7"><h3 data-number="16.3.7" class="anchored" data-anchor-id="other-elements">
 <span class="header-section-number">16.3.7</span> Other elements</h3>
-<p>Try to extract some of the other TreeSE elements listed in chapter @ref(containers). However, such data are not always included.</p>
+<p>Try to extract some of the other TreeSE elements listed in chapter <a href="04_containers.html"><span>Chapter&nbsp;2</span></a>. However, such data are not always included.</p>
 <ol type="1">
 <li>Import the mia package, load any of the example data sets mentioned in Chapter 3.3 with <code>data</code> and store it into a variable named <code>tse</code>.<br>
 </li>
@@ -686,7 +686,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Import the mia package, load any of the example data sets mentioned in Chapter 3.3 with <code>data</code> and store it into a variable named <code>tse</code>.<br>
 </li>
-<li>Transform the counts assay into relative abundances with <code>transformAssay</code> and store it into the TreeSE as an assay named <code>relabund</code> (see chapter @ref(assay-transform)).<br>
+<li>Transform the counts assay into relative abundances with <code>transformAssay</code> and store it into the TreeSE as an assay named <code>relabund</code> (see chapter <a href="11_taxonomic_information.html#sec-assay-transform"><span>Section&nbsp;5.4</span></a>).<br>
 </li>
 <li>Similarly, perform a clr transformation on the counts assay with a <code>pseudocount</code> of 1 and add it to the TreeSE as a new assay.<br>
 </li>
@@ -803,7 +803,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <strong>Extra</strong>: Perform MDS again with <code>runMDS</code>, but this time use Jaccard dissimilarity. The distance metric to use can be defined with the optional argument <code>method</code>, choosing from the methods in <code><a href="https://rdrr.io/pkg/vegan/man/vegdist.html">?vegan::vegdist</a></code>. If you don’t want to overwrite the reducedDim object made in point 3, set <code>name</code> to a name of your choice. Visualize and compare it to the plot from point 4.</li>
 </ol>
-<p>Good job! You are now able to produce and visualize reduced dimensions of a TreeSE. <code>runMDS</code> is actually one of several algorithms for PCoA and dimensionality reduction, which you can find in section @ref(other-ord-methods).</p>
+<p>Good job! You are now able to produce and visualize reduced dimensions of a TreeSE. <code>runMDS</code> is actually one of several algorithms for PCoA and dimensionality reduction, which you can find in section <a href="20_beta_diversity.html#sec-other-ord-methods"><span>Section&nbsp;7.1.2</span></a>.</p>
 </section><section id="permanova-analysis" class="level3" data-number="16.7.4"><h3 data-number="16.7.4" class="anchored" data-anchor-id="permanova-analysis">
 <span class="header-section-number">16.7.4</span> PERMANOVA analysis</h3>
 <p>In this exercise we focus on studying the weight of variables on the microbiome composition. Significance of each variable on beta diversity is tested with PERMANOVA (point 4) and the homogeneity assumption is also be controlled with a PERMDISP2 analysis (point 5).</p>
@@ -831,7 +831,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Well done! You went through an RDA analysis followed by significance testing with PERMANOVA and BETADISPER2. In the next exercise we’ll go deeper quantify the contributions to beta diversity.</p>
 </section><section id="beta-diversity-analysis" class="level3" data-number="16.7.6"><h3 data-number="16.7.6" class="anchored" data-anchor-id="beta-diversity-analysis">
 <span class="header-section-number">16.7.6</span> Beta diversity analysis</h3>
-<p>This exercise prompts you to implement a workflow with distance-based RDA (dbRDA). You can refer to chapter @ref(dbrda-workflow) for a step-by-step walkthrough, which may be simplified in the future.</p>
+<p>This exercise prompts you to implement a workflow with distance-based RDA (dbRDA). You can refer to chapter <a href="20_beta_diversity.html#sec-dbrda-workflow"><span>Section&nbsp;7.3.1</span></a> for a step-by-step walkthrough, which may be simplified in the future.</p>
 <ol type="1">
 <li>Import the mia and vegan packages, load any of the example data sets mentioned in Chapter 3.3 with <code>data</code> and store it into a variable named <code>tse</code>.</li>
 <li>Create dbRDA with Bray-Curtis dissimilarities on relative abundances. Use PERMANOVA. Can differences between samples be explained with variables of sample meta data?</li>
@@ -851,7 +851,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Create a data.frame named <code>aldex_out</code> which includes both <code>x_tt</code> and <code>x_effect</code> and filter for the features with <code>wi.eBH &lt; 0.05</code>. Are there any significantly differential abundance taxa?</li>
 <li>
 <strong>Extra</strong>: If these results appear boring, repeat steps 1 - 5, but use <code>Gender</code> or <code>Age</code> as the grouping variable. Do we have any better luck with Gender? What is the problem with Age?</li>
-</ol></section><section id="control-daa-confounders" class="level3" data-number="16.8.2"><h3 data-number="16.8.2" class="anchored" data-anchor-id="control-daa-confounders">
+</ol></section><section id="sec-control-daa-confounders" class="level3" data-number="16.8.2"><h3 data-number="16.8.2" class="anchored" data-anchor-id="sec-control-daa-confounders">
 <span class="header-section-number">16.8.2</span> Controlling for confounders</h3>
 <ol type="1">
 <li>Import the mia and MicrobiomeStat packages, load any of the example data sets mentioned in Chapter 3.3 with <code>data</code> and store it into a variable named <code>tse</code>.</li>
@@ -859,7 +859,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Model the counts assay of the TreeSE with <code>linda</code> and store the output into a variable named <code>linda_out</code>. Provide the colData converted into a data.frame (with <code>as.data.frame</code>) as the second argument, and a <code>formula</code> with the Age, Gender and Diet as variables. For example, <code>formula = "~ A + B"</code> represents a formula with variables A and B.</li>
 <li>Extract the <code>output$AgeElderly</code> object from <code>linda_out</code> with <code>$</code> and store it into a variable named <code>linda_res</code>.</li>
 <li>Filter <code>linda_res</code> for features with <code>reject == TRUE</code>. How many differentially abundant taxa were found? What are their names and how significant are they in terms of log-fold change and adjusted p-value?</li>
-</ol></section><section id="compare-daa-methods" class="level3" data-number="16.8.3"><h3 data-number="16.8.3" class="anchored" data-anchor-id="compare-daa-methods">
+</ol></section><section id="sec-compare-daa-methods" class="level3" data-number="16.8.3"><h3 data-number="16.8.3" class="anchored" data-anchor-id="sec-compare-daa-methods">
 <span class="header-section-number">16.8.3</span> Comparing methods</h3>
 <p>Here, we conduct DAA with identical parameters as in the <a href="#control-daa-confounders">previous exercise</a>, but with a different method, namely ZicoSeq. We aim to compare the results between these two methods and draw better informed conclusions from such comparative approach.</p>
 <ol type="1">
@@ -980,7 +980,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Analyze correlations between the microbiota and the biomarkers experiments with <code>getExperimentCrossAssociation</code>. Don’t forget to specify the experiments you want to compare with the arguments <code>experiment1</code> and <code>experiment2</code>, and which of their assays with <code>assay.type1</code> and <code>assay.type2</code>.</li>
 <li>What does the output look like? By default, correlation is measured in terms of Kendall tau coefficients. Repeat point 2, but this time change <code>method</code> to Spearman coefficients.</li>
 <li>Are you able to infer significance from the output? In order to also obtain p-values from the cross-correlation analysis, repeat point 2 with the additional argument <code>test_significance = TRUE</code>.</li>
-<li>Visualize results with a heatmap similarly to the example in section @ref(cross-correlation). Do you see any significant correlations? Interpret your results.</li>
+<li>Visualize results with a heatmap similarly to the example in section <a href="23_multi-assay_analyses.html#sec-cross-correlation"><span>Section&nbsp;12.1</span></a>. Do you see any significant correlations? Interpret your results.</li>
 <li>
 <strong>Extra</strong>: Perform cross-correlation analysis between the remaining experiments (microbiota vs metabolites and metabolites vs biomarkers) and visualize results with heatmaps.</li>
 </ol>

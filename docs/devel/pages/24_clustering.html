@@ -335,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="clustering" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community Typing (Clustering)</span></span></h1>
+<h1 class="title"><span id="sec-clustering" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community Typing (Clustering)</span></span></h1>
 </div>
 
 
@@ -383,7 +383,7 @@ document.addEventListener("click", function (event) {
 </style>
 </div>
 <p>Clustering techniques are unsupervised machine learning that aims to find groups, called clusters, that share a pattern in the data. In the microbiome context, clustering techniques are included in microbiome community typing methods. For example, clustering allow samples to be distinguished from each other based on their microbiome community composition. There are multiple clustering algorithms available.</p>
-<p>The data can be clustered either based on features or samples. Hence, depending on the analysis goal the data might require transformation. The examples below are focused on sample clustering. To learn about feature clustering, check out chapter @ref(taxa-clustering).</p>
+<p>The data can be clustered either based on features or samples. Hence, depending on the analysis goal the data might require transformation. The examples below are focused on sample clustering. To learn about feature clustering, check out chapter <a href="11_taxonomic_information.html#sec-taxa-clustering"><span>Section&nbsp;5.3.1</span></a>.</p>
 <section id="custom-tools" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="custom-tools">
 <span class="header-section-number">9.1</span> Custom tools</h2>
 <p><em>bluster</em> is a Bioconductor package providing tools for clustering data in in the <code>SummarizedExperiment</code> container. It offers multiple algorithms such as hierarchical clustering, DBSCAN, and K-means.</p>
@@ -597,16 +597,16 @@ document.addEventListener("click", function (event) {
 <div class="cell" data-layout-align="center" data-hash="24_clustering_cache/html/dmm7_265200bb5887de4edad2ba2468efdd04">
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu">metadata</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SingleCellExperiment/man/altExps.html">altExp</a></span><span class="op">(</span><span class="va">tse</span>, <span class="st">"dmm"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">DMM</span><span class="op">$</span><span class="va">prob</span>, <span class="fl">10</span><span class="op">)</span> </span>
 <span><span class="co">##                  1         2</span></span>
-<span><span class="co">##  CL3     1.000e+00 5.057e-17</span></span>
-<span><span class="co">##  CC1     1.000e+00 3.870e-22</span></span>
-<span><span class="co">##  SV1     1.000e+00 2.032e-12</span></span>
-<span><span class="co">##  M31Fcsw 7.325e-26 1.000e+00</span></span>
-<span><span class="co">##  M11Fcsw 1.064e-16 1.000e+00</span></span>
-<span><span class="co">##  M31Plmr 9.986e-14 1.000e+00</span></span>
-<span><span class="co">##  M11Plmr 2.196e-06 1.000e+00</span></span>
-<span><span class="co">##  F21Plmr 2.856e-11 1.000e+00</span></span>
-<span><span class="co">##  M31Tong 1.307e-08 1.000e+00</span></span>
-<span><span class="co">##  M11Tong 2.085e-06 1.000e+00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co">##  CL3     1.000e+00 4.444e-17</span></span>
+<span><span class="co">##  CC1     1.000e+00 3.303e-22</span></span>
+<span><span class="co">##  SV1     1.000e+00 1.765e-12</span></span>
+<span><span class="co">##  M31Fcsw 6.895e-26 1.000e+00</span></span>
+<span><span class="co">##  M11Fcsw 1.025e-16 1.000e+00</span></span>
+<span><span class="co">##  M31Plmr 1.025e-13 1.000e+00</span></span>
+<span><span class="co">##  M11Plmr 2.488e-06 1.000e+00</span></span>
+<span><span class="co">##  F21Plmr 2.960e-11 1.000e+00</span></span>
+<span><span class="co">##  M31Tong 1.351e-08 1.000e+00</span></span>
+<span><span class="co">##  M11Tong 2.116e-06 1.000e+00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once the optimal model have been confirmed, we can find out which samples are grouped with each other. The table below shows one sample of each sample type clustered in either of the groups. We can notice that DMM can distinguish environmental samples into one group, and mock and human samples into another. For clarity, in this example, the probabilities for each sample to belong in each cluster have been rounded.</p>
 <div class="cell" data-layout-align="center" data-hash="24_clustering_cache/html/dmm8_7a2eb63749a5bf0b3c102a76f7c6211b">
@@ -688,7 +688,7 @@ document.addEventListener("click", function (event) {
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">DirichletMultinomial</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/DirichletMultinomial/man/fitted.html">mixturewt</a></span><span class="op">(</span><span class="va">bestFit</span><span class="op">)</span></span>
 <span><span class="co">##        pi theta</span></span>
 <span><span class="co">##  1 0.5385 20.60</span></span>
-<span><span class="co">##  2 0.4615 15.28</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co">##  2 0.4615 15.32</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="pcoa-with-dmm-clusters" class="level3" data-number="9.3.1"><h3 data-number="9.3.1" class="anchored" data-anchor-id="pcoa-with-dmm-clusters">
 <span class="header-section-number">9.3.1</span> PCoA with DMM clusters</h3>
@@ -744,7 +744,7 @@ document.addEventListener("click", function (event) {
 <li>Taxa vs biomolecule/biomarker</li>
 </ol>
 <p>Biclusters can be visualized using heatmap or boxplot, for instance. For checking purposes, also scatter plot might be valid choice.</p>
-<p>Check more ideas for heatmaps from chapters @ref(viz-chapter) and @ref(microbiome-community).</p>
+<p>Check more ideas for heatmaps from chapters <a href="19_visualization_techniques.html"><span>Chapter&nbsp;13</span></a> and <a href="21_microbiome_community.html"><span>Chapter&nbsp;8</span></a>.</p>
 <section id="taxa-vs-samples" class="level3" data-number="9.4.1"><h3 data-number="9.4.1" class="anchored" data-anchor-id="taxa-vs-samples">
 <span class="header-section-number">9.4.1</span> Taxa vs samples</h3>
 <p>When you have microbial abundance matrices, we suggest to use <em>cobiclust</em> which is designed for microbial data.</p>
@@ -896,12 +896,12 @@ document.addEventListener("click", function (event) {
 <span><span class="co">##  call:</span></span>
 <span><span class="co">##      biclust(x = corr, method = BCPlaid(), verbose = FALSE)</span></span>
 <span><span class="co">##  </span></span>
-<span><span class="co">##  Number of Clusters found:  5 </span></span>
+<span><span class="co">##  Number of Clusters found:  8 </span></span>
 <span><span class="co">##  </span></span>
 <span><span class="co">##  First  5  Cluster sizes:</span></span>
 <span><span class="co">##                     BC 1 BC 2 BC 3 BC 4 BC 5</span></span>
-<span><span class="co">##  Number of Rows:      15   16   10    6    3</span></span>
-<span><span class="co">##  Number of Columns:   13   14    8    7   10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co">##  Number of Rows:      15   14   17    2    4</span></span>
+<span><span class="co">##  Number of Columns:   13   14   10   11    8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The object includes cluster information. However compared to <em>cobiclust</em>, <em>biclust</em> object includes only information about clusters that were found, not general cluster.</p>
 <p>Meaning that if one cluster size of 5 features was found out of 20 features, those 15 features do not belong to any cluster. That is why we have to create an additional cluster for features/samples that are not assigned into any cluster.</p>
@@ -973,13 +973,13 @@ document.addEventListener("click", function (event) {
 <span><span class="co">##  D_5__Escherichia-Shigella     FALSE     FALSE     FALSE     FALSE     FALSE</span></span>
 <span><span class="co">##  D_5__Ruminiclostridium 5       TRUE     FALSE      TRUE     FALSE     FALSE</span></span>
 <span><span class="co">##  D_5__Pseudomonas              FALSE     FALSE     FALSE     FALSE     FALSE</span></span>
-<span><span class="co">##                            cluster_6</span></span>
-<span><span class="co">##  D_5__Staphylococcus            TRUE</span></span>
-<span><span class="co">##  D_5__Klebsiella                TRUE</span></span>
-<span><span class="co">##  D_5__Streptococcus             TRUE</span></span>
-<span><span class="co">##  D_5__Escherichia-Shigella      TRUE</span></span>
-<span><span class="co">##  D_5__Ruminiclostridium 5      FALSE</span></span>
-<span><span class="co">##  D_5__Pseudomonas               TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co">##                            cluster_6 cluster_7 cluster_8 cluster_9</span></span>
+<span><span class="co">##  D_5__Staphylococcus           FALSE     FALSE     FALSE      TRUE</span></span>
+<span><span class="co">##  D_5__Klebsiella               FALSE     FALSE     FALSE      TRUE</span></span>
+<span><span class="co">##  D_5__Streptococcus            FALSE     FALSE     FALSE      TRUE</span></span>
+<span><span class="co">##  D_5__Escherichia-Shigella     FALSE     FALSE     FALSE      TRUE</span></span>
+<span><span class="co">##  D_5__Ruminiclostridium 5      FALSE     FALSE     FALSE     FALSE</span></span>
+<span><span class="co">##  D_5__Pseudomonas              FALSE     FALSE     FALSE      TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s collect information for the scatter plot.</p>
 <div class="cell" data-layout-align="center" data-hash="24_clustering_cache/html/biclust_6_31e4ffabf443fef222e1714bfc41af76">
@@ -1063,10 +1063,28 @@ document.addEventListener("click", function (event) {
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pics</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span> <span class="op">+</span> <span class="va">pics</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span> <span class="op">+</span> <span class="va">pics</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="24_clustering_files/figure-html/biclust_7-7.png" class="img-fluid figure-img" style="width:33.0%"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="24_clustering_files/figure-html/biclust_7-8.png" class="img-fluid figure-img" style="width:33.0%"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="24_clustering_files/figure-html/biclust_7-9.png" class="img-fluid figure-img" style="width:33.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pics</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span> <span class="op">+</span> <span class="va">pics</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span> <span class="op">+</span> <span class="va">pics</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="24_clustering_files/figure-html/biclust_7-10.png" class="img-fluid figure-img" style="width:33.0%"></p>
 </figure>
 </div>
 </div>

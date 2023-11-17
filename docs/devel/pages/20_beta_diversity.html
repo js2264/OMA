@@ -335,10 +335,10 @@ div.csl-indent {
    
   <ul>
 <li>
-<a href="#unsupervised-ordination" id="toc-unsupervised-ordination" class="nav-link active" data-scroll-target="#unsupervised-ordination"><span class="header-section-number">7.1</span> Unsupervised ordination</a>
+<a href="#sec-unsupervised-ordination" id="toc-sec-unsupervised-ordination" class="nav-link active" data-scroll-target="#sec-unsupervised-ordination"><span class="header-section-number">7.1</span> Unsupervised ordination</a>
   <ul class="collapse">
 <li><a href="#comparing-communities-by-beta-diversity-analysis" id="toc-comparing-communities-by-beta-diversity-analysis" class="nav-link" data-scroll-target="#comparing-communities-by-beta-diversity-analysis"><span class="header-section-number">7.1.1</span> Comparing communities by beta diversity analysis</a></li>
-  <li><a href="#other-ord-methods" id="toc-other-ord-methods" class="nav-link" data-scroll-target="#other-ord-methods"><span class="header-section-number">7.1.2</span> Other ordination methods</a></li>
+  <li><a href="#sec-other-ord-methods" id="toc-sec-other-ord-methods" class="nav-link" data-scroll-target="#sec-other-ord-methods"><span class="header-section-number">7.1.2</span> Other ordination methods</a></li>
   <li><a href="#explained-variance" id="toc-explained-variance" class="nav-link" data-scroll-target="#explained-variance"><span class="header-section-number">7.1.3</span> Explained variance</a></li>
   </ul>
 </li>
@@ -346,7 +346,7 @@ div.csl-indent {
   <li>
 <a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies"><span class="header-section-number">7.3</span> Case studies</a>
   <ul class="collapse">
-<li><a href="#dbrda-workflow" id="toc-dbrda-workflow" class="nav-link" data-scroll-target="#dbrda-workflow"><span class="header-section-number">7.3.1</span> Testing differences in community composition between sample groups</a></li>
+<li><a href="#sec-dbrda-workflow" id="toc-sec-dbrda-workflow" class="nav-link" data-scroll-target="#sec-dbrda-workflow"><span class="header-section-number">7.3.1</span> Testing differences in community composition between sample groups</a></li>
   <li><a href="#checking-the-homogeneity-condition" id="toc-checking-the-homogeneity-condition" class="nav-link" data-scroll-target="#checking-the-homogeneity-condition"><span class="header-section-number">7.3.2</span> Checking the homogeneity condition</a></li>
   </ul>
 </li>
@@ -355,7 +355,7 @@ div.csl-indent {
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="community-similarity" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Community Similarity</span></span></h1>
+<h1 class="title"><span id="sec-community-similarity" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Community Similarity</span></span></h1>
 </div>
 
 
@@ -459,7 +459,7 @@ document.addEventListener("click", function (event) {
 </table>
 <p>In practice, beta diversity is usually represented as a <code>dist</code> object, a triangular matrix where the distance between each pair of samples is encoded by a specific cell. This distance matrix can then undergo ordination, which is an important ecological tool to reduce the dimensionality of data for a more efficient analysis and visualization. Ordination techniques aim to capture as much essential information from the data as possible and turn it into a lower dimensional representation. Dimension reduction is bound to lose information but commonly used ordination techniques can preserve relevant information of sample similarities in an optimal way, which is defined in different ways by different methods.</p>
 <p>Based on the type of algorithm, ordination methods in microbiome research can be generally divided in two categories: unsupervised and supervised ordination. The former includes Principal Coordinate Analysis (PCoA), Principal Component Analysis (PCA) and Uniform Manifold Approximation and Projection for Dimension Reduction (UMAP), whereas the latter is mainly represented by distance-based Redundancy Analysis (dbRDA). We will first discuss unsupervised ordination methods and then proceed to supervised ones.</p>
-<section id="unsupervised-ordination" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="unsupervised-ordination">
+<section id="sec-unsupervised-ordination" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="sec-unsupervised-ordination">
 <span class="header-section-number">7.1</span> Unsupervised ordination</h2>
 <p>Unsupervised ordination methods variation in the data without additional information on covariates or other supervision of the model. Among the different approaches, Multi-Dimensional Scaling (MDS) and non-metric MDS (NMDS) can be regarded as the standard. They are jointly referred to as PCoA. For this demonstration we will analyse beta diversity in GlobalPatterns, and observe the variation between stool samples and those with a different origin.</p>
 <div class="cell" data-layout-align="center" data-hash="20_beta_diversity_cache/html/prep-tse_e8fb33764f33877afb662939c22711b2">
@@ -582,7 +582,7 @@ document.addEventListener("click", function (event) {
 </div>
 </div>
 </div>
-</section><section id="other-ord-methods" class="level3" data-number="7.1.2"><h3 data-number="7.1.2" class="anchored" data-anchor-id="other-ord-methods">
+</section><section id="sec-other-ord-methods" class="level3" data-number="7.1.2"><h3 data-number="7.1.2" class="anchored" data-anchor-id="sec-other-ord-methods">
 <span class="header-section-number">7.1.2</span> Other ordination methods</h3>
 <p>Other dimension reduction methods, such as PCA and UMAP, are inherited from the scater package.</p>
 <div class="cell" data-layout-align="center" data-hash="20_beta_diversity_cache/html/plot-pca_50ce3e1d0d7cff69650674e6f5650ae2">
@@ -742,7 +742,7 @@ document.addEventListener("click", function (event) {
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">1.1157</td>
 <td style="text-align: right;">1.940</td>
-<td style="text-align: right;">0.035</td>
+<td style="text-align: right;">0.027</td>
 <td style="text-align: right;">3.991</td>
 <td style="text-align: right;">0.2795</td>
 </tr>
@@ -751,7 +751,7 @@ document.addEventListener("click", function (event) {
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">0.5837</td>
 <td style="text-align: right;">1.522</td>
-<td style="text-align: right;">0.153</td>
+<td style="text-align: right;">0.127</td>
 <td style="text-align: right;">3.991</td>
 <td style="text-align: right;">0.1463</td>
 </tr>
@@ -760,7 +760,7 @@ document.addEventListener("click", function (event) {
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.1679</td>
 <td style="text-align: right;">1.751</td>
-<td style="text-align: right;">0.128</td>
+<td style="text-align: right;">0.094</td>
 <td style="text-align: right;">3.991</td>
 <td style="text-align: right;">0.0421</td>
 </tr>
@@ -822,7 +822,7 @@ document.addEventListener("click", function (event) {
 <td style="text-align: right;">0.0628</td>
 <td style="text-align: right;">2.7440</td>
 <td style="text-align: right;">999</td>
-<td style="text-align: right;">0.129</td>
+<td style="text-align: right;">0.107</td>
 <td style="text-align: right;">1.0288</td>
 <td style="text-align: right;">0.2440</td>
 </tr>
@@ -833,7 +833,7 @@ document.addEventListener("click", function (event) {
 <td style="text-align: right;">0.0103</td>
 <td style="text-align: right;">0.4158</td>
 <td style="text-align: right;">999</td>
-<td style="text-align: right;">0.525</td>
+<td style="text-align: right;">0.528</td>
 <td style="text-align: right;">0.9283</td>
 <td style="text-align: right;">0.0111</td>
 </tr>
@@ -844,7 +844,7 @@ document.addEventListener("click", function (event) {
 <td style="text-align: right;">0.0113</td>
 <td style="text-align: right;">17.0255</td>
 <td style="text-align: right;">999</td>
-<td style="text-align: right;">0.402</td>
+<td style="text-align: right;">0.417</td>
 <td style="text-align: right;">0.3319</td>
 <td style="text-align: right;">0.9860</td>
 </tr>
@@ -869,7 +869,7 @@ document.addEventListener("click", function (event) {
 <p>From the plot above, we can see that only age significantly describes differences between the microbial profiles of different samples. Such visual approach complements the previous results of PERMANOVA.</p>
 </section><section id="case-studies" class="level2 page-columns page-full" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="case-studies">
 <span class="header-section-number">7.3</span> Case studies</h2>
-<section id="pcoa-genus" class="level4 page-columns page-full" data-number="7.3.0.1"><h4 data-number="7.3.0.1" class="anchored" data-anchor-id="pcoa-genus">
+<section id="sec-pcoa-genus" class="level4 page-columns page-full" data-number="7.3.0.1"><h4 data-number="7.3.0.1" class="anchored" data-anchor-id="sec-pcoa-genus">
 <span class="header-section-number">7.3.0.1</span> Visualizing the most dominant genus on PCoA</h4>
 <p>In this section, we visualize the most dominant genus on PCoA. A similar visualization was proposed by <span class="citation" data-cites="Salosensaari2021">(<a href="#ref-Salosensaari2021" role="doc-biblioref">2021</a>)</span>. First, we agglomerate the data at the Genus level and get the dominant taxa per sample.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-Salosensaari2021" class="csl-entry" role="listitem">
@@ -908,7 +908,7 @@ Salosensaari, Aaro, Ville Laitinen, Aki Havulinna, Guillaume Méric, Susan Cheng
 <span>                    name <span class="op">=</span> <span class="st">"PCoA_BC"</span>,</span>
 <span>                    assay.type <span class="op">=</span> <span class="st">"relabundance"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Finally, we get the top taxa and and visualize their abundances on PCoA. Note that A 3D interactive version of the plot below can be found in @ref(extras).</p>
+<p>Finally, we get the top taxa and and visualize their abundances on PCoA. Note that A 3D interactive version of the plot below can be found in <a href="97_extra_materials.html"><span>Appendix&nbsp;A</span></a>.</p>
 <div class="cell" data-layout-align="center" data-hash="20_beta_diversity_cache/html/unnamed-chunk-5_acc856c074d12456b4da292bb9fd8e0e">
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Getting the top taxa</span></span>
 <span><span class="va">top_taxa</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/summaries.html">getTopFeatures</a></span><span class="op">(</span><span class="va">tse_genus</span>,</span>
@@ -987,13 +987,13 @@ Salosensaari, Aaro, Ville Laitinen, Aki Havulinna, Guillaume Méric, Susan Cheng
 </div>
 </div>
 </div>
-</section><section id="dbrda-workflow" class="level3 page-columns page-full" data-number="7.3.1"><h3 data-number="7.3.1" class="anchored" data-anchor-id="dbrda-workflow">
+</section><section id="sec-dbrda-workflow" class="level3 page-columns page-full" data-number="7.3.1"><h3 data-number="7.3.1" class="anchored" data-anchor-id="sec-dbrda-workflow">
 <span class="header-section-number">7.3.1</span> Testing differences in community composition between sample groups</h3>
 <p>Permutational Analysis of Variance (PERMANOVA; <span class="citation" data-cites="Anderson2001">(<a href="#ref-Anderson2001" role="doc-biblioref">2001</a>)</span>) is a widely used non-parametric multivariate method that aims to estimate the actual statistical significance of differences in the observed community composition between two groups of samples.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-Anderson2001" class="csl-entry" role="listitem">
 Anderson, Marti J. 2001. <span>“A New Method for Non-Parametric Multivariate Analysis of Variance.”</span> <em>Austral Ecology</em> 26 (1): 32–46. <a href="https://doi.org/10.1111/j.1442-9993.2001.01070.pp.x">https://doi.org/10.1111/j.1442-9993.2001.01070.pp.x</a>.
 </div></div><p>PERMANOVA tests the hypothesis that the centroids and dispersion of the community are equivalent between the compared groups. A p-value smaller than the significance threshold indicates that the groups have a different community composition. This method is implemented with the <a href="https://www.rdocumentation.org/packages/vegan/versions/2.4-2/topics/adonis"><code>adonis2</code></a> function from the vegan package.</p>
-<p>By default, the argument <code>by</code> is set to <code>"terms"</code>, in which the order of variables in the formula matters. In this case, each variable is analyzed sequentially, and the result is different when more than 1 variable is introduced and their order differs. Therefore, it is recommended to set <code>by = "margin"</code>, which specifies that the marginal effect of each variable is analyzed individually. You can view a comparison between the two designs in chapter @ref(compare-permanova).</p>
+<p>By default, the argument <code>by</code> is set to <code>"terms"</code>, in which the order of variables in the formula matters. In this case, each variable is analyzed sequentially, and the result is different when more than 1 variable is introduced and their order differs. Therefore, it is recommended to set <code>by = "margin"</code>, which specifies that the marginal effect of each variable is analyzed individually. You can view a comparison between the two designs in chapter <a href="97_extra_materials.html#sec-compare-permanova"><span>Section&nbsp;A.2</span></a>.</p>
 <p>We can perform PERMANOVA either with <code>adonis2</code> function or by first performing dbRDA and then applying permutational test its results. An advantage of the latter approach is that by doing so we can get coefficients: how much each taxa affects the variation between communities.</p>
 <div class="cell" data-layout-align="center" data-hash="20_beta_diversity_cache/html/unnamed-chunk-7_e6f9e862b08a09180a72a6868a79846b">
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Agglomerate data to Species level</span></span>
@@ -1105,7 +1105,7 @@ Anderson, Marti J. 2001. <span>“A New Method for Non-Parametric Multivariate A
 <li>
 <a href="http://bioconductor.org/books/release/OSCA/clustering.html">How to extract information from clusters</a><br>
 </li>
-<li>Chapter @ref(clustering) on community typing</li>
+<li>Chapter <a href="24_clustering.html"><span>Chapter&nbsp;9</span></a> on community typing</li>
 </ul>
 
 

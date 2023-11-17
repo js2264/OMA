@@ -344,21 +344,21 @@ div.csl-indent {
   <li>
 <a href="#functions-to-access-taxonomic-information" id="toc-functions-to-access-taxonomic-information" class="nav-link" data-scroll-target="#functions-to-access-taxonomic-information"><span class="header-section-number">5.2</span> Functions to access taxonomic information</a>
   <ul class="collapse">
-<li><a href="#fly-tree" id="toc-fly-tree" class="nav-link" data-scroll-target="#fly-tree"><span class="header-section-number">5.2.1</span> Generate a taxonomic tree on the fly</a></li>
+<li><a href="#sec-fly-tree" id="toc-sec-fly-tree" class="nav-link" data-scroll-target="#sec-fly-tree"><span class="header-section-number">5.2.1</span> Generate a taxonomic tree on the fly</a></li>
   </ul>
 </li>
   <li>
-<a href="#data-agglomeration" id="toc-data-agglomeration" class="nav-link" data-scroll-target="#data-agglomeration"><span class="header-section-number">5.3</span> Data agglomeration</a>
+<a href="#sec-data-agglomeration" id="toc-sec-data-agglomeration" class="nav-link" data-scroll-target="#sec-data-agglomeration"><span class="header-section-number">5.3</span> Data agglomeration</a>
   <ul class="collapse">
-<li><a href="#taxa-clustering" id="toc-taxa-clustering" class="nav-link" data-scroll-target="#taxa-clustering"><span class="header-section-number">5.3.1</span> Taxa clustering</a></li>
+<li><a href="#sec-taxa-clustering" id="toc-sec-taxa-clustering" class="nav-link" data-scroll-target="#sec-taxa-clustering"><span class="header-section-number">5.3.1</span> Taxa clustering</a></li>
   </ul>
 </li>
-  <li><a href="#assay-transform" id="toc-assay-transform" class="nav-link" data-scroll-target="#assay-transform"><span class="header-section-number">5.4</span> Data transformation</a></li>
+  <li><a href="#sec-assay-transform" id="toc-sec-assay-transform" class="nav-link" data-scroll-target="#sec-assay-transform"><span class="header-section-number">5.4</span> Data transformation</a></li>
   </ul></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="taxonomic-information" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Taxonomic Information</span></span></h1>
+<h1 class="title"><span id="sec-taxonomic-information" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Taxonomic Information</span></span></h1>
 </div>
 
 
@@ -520,7 +520,7 @@ Wright, Erik. 2020. <em>DECIPHER: Tools for Curating, Analyzing, and Manipulatin
 <span><span class="co">##  [1] "Crenarchaeota"  "Euryarchaeota"  "Actinobacteria" "Spirochaetes"  </span></span>
 <span><span class="co">##  [5] "MVP-15"         "Proteobacteria"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="fly-tree" class="level3 page-columns page-full" data-number="5.2.1"><h3 data-number="5.2.1" class="anchored" data-anchor-id="fly-tree">
+<section id="sec-fly-tree" class="level3 page-columns page-full" data-number="5.2.1"><h3 data-number="5.2.1" class="anchored" data-anchor-id="sec-fly-tree">
 <span class="header-section-number">5.2.1</span> Generate a taxonomic tree on the fly</h3>
 <p>To create a taxonomic tree, <code>taxonomyTree</code> used the information and returns a <code>phylo</code> object. Duplicate information from the <code>rowData</code> is removed.</p>
 <div class="cell" data-layout-align="center" data-hash="11_taxonomic_information_cache/html/unnamed-chunk-10_e6e5304cba49824e588ea548dc04f5b3">
@@ -558,7 +558,7 @@ Wright, Erik. 2020. <em>DECIPHER: Tools for Curating, Analyzing, and Manipulatin
 <p>The implementation is based on the <code>toTree</code> function from the <code>TreeSummarizedExperiment</code> package <span class="citation" data-cites="R_TreeSummarizedExperiment">(<a href="#ref-R_TreeSummarizedExperiment" role="doc-biblioref">Huang 2020</a>)</span>.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-R_TreeSummarizedExperiment" class="csl-entry" role="listitem">
 Huang, Ruizhu. 2020. <em>TreeSummarizedExperiment: A S4 Class for Data with Tree Structures</em>.
-</div></div></section></section><section id="data-agglomeration" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="data-agglomeration">
+</div></div></section></section><section id="sec-data-agglomeration" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="sec-data-agglomeration">
 <span class="header-section-number">5.3</span> Data agglomeration</h2>
 <p>One of the main applications of taxonomic information in regards to count data is to agglomerate count data on taxonomic levels and track the influence of changing conditions through these levels. For this <code>mia</code> contains the <code>mergeFeaturesByRank</code> function. The ideal location to store the agglomerated data is as an alternative experiment.</p>
 <div class="cell" data-layout-align="center" data-hash="11_taxonomic_information_cache/html/unnamed-chunk-12_8585e6c3e00756af123ee52ad354601f">
@@ -658,7 +658,7 @@ Huang, Ruizhu. 2020. <em>TreeSummarizedExperiment: A S4 Class for Data with Tree
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Saving the tse for later</span></span>
 <span><span class="va">tseGlobalPatterns</span> <span class="op">&lt;-</span> <span class="va">tse</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="taxa-clustering" class="level3" data-number="5.3.1"><h3 data-number="5.3.1" class="anchored" data-anchor-id="taxa-clustering">
+<section id="sec-taxa-clustering" class="level3" data-number="5.3.1"><h3 data-number="5.3.1" class="anchored" data-anchor-id="sec-taxa-clustering">
 <span class="header-section-number">5.3.1</span> Taxa clustering</h3>
 <p>Another way to agglomerate the data is to cluster the taxa. To do so, we usually start by doing a compositionality aware transformation such as CLR, followed by the application of a standard clustering method.</p>
 <p>Here is an example that does a CLR transformation followed by the hierarchical clustering algorithm.</p>
@@ -754,7 +754,7 @@ Huang, Ruizhu. 2020. <em>TreeSummarizedExperiment: A S4 Class for Data with Tree
 <span><span class="co">##  colTree: NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can note that it worked as planned since there were 5 clusters and there are now 5 rows.</p>
-</section></section><section id="assay-transform" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="assay-transform">
+</section></section><section id="sec-assay-transform" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="sec-assay-transform">
 <span class="header-section-number">5.4</span> Data transformation</h2>
 <p>Data transformations are common in microbiome analysis. Examples include the logarithmic transformation, calculation of relative abundances (percentages), and compositionality-aware transformations such as the centered log-ratio transformation (clr).</p>
 <p>In mia package, transformations are applied to abundance data. The transformed abundance table is stored back to ‘assays’. mia includes transformation function (‘transformAssay()’) which applies sample-wise or column-wise transformation when MARGIN = ‘samples’, feature-wise or row-wise transformation when MARGIN = ‘features’.</p>

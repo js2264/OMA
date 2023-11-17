@@ -335,17 +335,17 @@ div.csl-indent {
    
   <ul>
 <li>
-<a href="#visual-composition" id="toc-visual-composition" class="nav-link active" data-scroll-target="#visual-composition"><span class="header-section-number">8.1</span> Visualizing taxonomic composition</a>
+<a href="#sec-visual-composition" id="toc-sec-visual-composition" class="nav-link active" data-scroll-target="#sec-visual-composition"><span class="header-section-number">8.1</span> Visualizing taxonomic composition</a>
   <ul class="collapse">
 <li><a href="#composition-barplot" id="toc-composition-barplot" class="nav-link" data-scroll-target="#composition-barplot"><span class="header-section-number">8.1.1</span> Composition barplot</a></li>
-  <li><a href="#composition-heatmap" id="toc-composition-heatmap" class="nav-link" data-scroll-target="#composition-heatmap"><span class="header-section-number">8.1.2</span> Composition heatmap</a></li>
+  <li><a href="#sec-composition-heatmap" id="toc-sec-composition-heatmap" class="nav-link" data-scroll-target="#sec-composition-heatmap"><span class="header-section-number">8.1.2</span> Composition heatmap</a></li>
   </ul>
 </li>
   </ul></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="microbiome-community" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Community Composition</span></span></h1>
+<h1 class="title"><span id="sec-microbiome-community" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Community Composition</span></span></h1>
 </div>
 
 
@@ -397,7 +397,7 @@ document.addEventListener("click", function (event) {
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"GlobalPatterns"</span>, package<span class="op">=</span><span class="st">"mia"</span><span class="op">)</span></span>
 <span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="va">GlobalPatterns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="visual-composition" class="level2 page-columns page-full" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="visual-composition">
+<section id="sec-visual-composition" class="level2 page-columns page-full" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="sec-visual-composition">
 <span class="header-section-number">8.1</span> Visualizing taxonomic composition</h2>
 <section id="composition-barplot" class="level3" data-number="8.1.1"><h3 data-number="8.1.1" class="anchored" data-anchor-id="composition-barplot">
 <span class="header-section-number">8.1.1</span> Composition barplot</h3>
@@ -427,7 +427,7 @@ document.addEventListener("click", function (event) {
 </div>
 </div>
 </div>
-</section><section id="composition-heatmap" class="level3 page-columns page-full" data-number="8.1.2"><h3 data-number="8.1.2" class="anchored" data-anchor-id="composition-heatmap">
+</section><section id="sec-composition-heatmap" class="level3 page-columns page-full" data-number="8.1.2"><h3 data-number="8.1.2" class="anchored" data-anchor-id="sec-composition-heatmap">
 <span class="header-section-number">8.1.2</span> Composition heatmap</h3>
 <p>Community composition can be visualized with heatmap, where the horizontal axis represents samples and the vertical axis the taxa. Color of each intersection point represents abundance of a taxon in a specific sample.</p>
 <p>Here, abundances are first CLR (centered log-ratio) transformed to remove compositionality bias. Then Z transformation is applied to CLR-transformed data. This shifts all taxa to zero mean and unit variance, allowing visual comparison between taxa that have different absolute abundance levels. After these rough visual exploration techniques, we can visualize the abundances at Phylum level.</p>
@@ -647,7 +647,7 @@ document.addEventListener("click", function (event) {
 </div>
 </div>
 </div>
-<p>In addition, there are also other packages that provide functions for more complex heatmaps, such as <a href="https://docs.ropensci.org/iheatmapr/articles/full_vignettes/iheatmapr.html"><em>iheatmapr</em></a> and ComplexHeatmap <span class="citation" data-cites="ComplexHeatmap">(<a href="#ref-ComplexHeatmap" role="doc-biblioref">Gu 2022</a>)</span>. <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/sechm/inst/doc/sechm.html">sechm</a> package provides wrapper for <em>ComplexHeatmap</em> and its usage is explained in chapter @ref(viz-chapter) along with the <code>pheatmap</code> package for clustered heatmaps.</p>
+<p>In addition, there are also other packages that provide functions for more complex heatmaps, such as <a href="https://docs.ropensci.org/iheatmapr/articles/full_vignettes/iheatmapr.html"><em>iheatmapr</em></a> and ComplexHeatmap <span class="citation" data-cites="ComplexHeatmap">(<a href="#ref-ComplexHeatmap" role="doc-biblioref">Gu 2022</a>)</span>. <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/sechm/inst/doc/sechm.html">sechm</a> package provides wrapper for <em>ComplexHeatmap</em> and its usage is explained in chapter <a href="19_visualization_techniques.html"><span>Chapter&nbsp;13</span></a> along with the <code>pheatmap</code> package for clustered heatmaps.</p>
 
 
 <div class="no-row-height column-margin column-container"><div id="ref-ComplexHeatmap" class="csl-entry" role="listitem">
