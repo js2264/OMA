@@ -364,7 +364,8 @@ div.csl-indent {
 <li><a href="#sec-package-data" id="toc-sec-package-data" class="nav-link" data-scroll-target="#sec-package-data"><span class="header-section-number">2.3.1</span> Package data</a></li>
   <li><a href="#experimenthub-data" id="toc-experimenthub-data" class="nav-link" data-scroll-target="#experimenthub-data"><span class="header-section-number">2.3.2</span> ExperimentHub data</a></li>
   <li><a href="#curated-metagenomic-data" id="toc-curated-metagenomic-data" class="nav-link" data-scroll-target="#curated-metagenomic-data"><span class="header-section-number">2.3.3</span> Curated metagenomic data</a></li>
-  <li><a href="#other-data-sources" id="toc-other-data-sources" class="nav-link" data-scroll-target="#other-data-sources"><span class="header-section-number">2.3.4</span> Other data sources</a></li>
+  <li><a href="#human-microbiome-compendium" id="toc-human-microbiome-compendium" class="nav-link" data-scroll-target="#human-microbiome-compendium"><span class="header-section-number">2.3.4</span> Human microbiome compendium</a></li>
+  <li><a href="#other-data-sources" id="toc-other-data-sources" class="nav-link" data-scroll-target="#other-data-sources"><span class="header-section-number">2.3.5</span> Other data sources</a></li>
   </ul>
 </li>
   <li>
@@ -772,8 +773,17 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/waldronlab/curatedMetagenomicData">curatedMetagenomicData</a></span><span class="op">)</span></span>
 <span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/curatedMetagenomicData/man/curatedMetagenomicData.html">curatedMetagenomicData</a></span><span class="op">(</span><span class="st">"Vatanen*"</span>, dryrun <span class="op">=</span> <span class="cn">FALSE</span>, counts <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="other-data-sources" class="level3" data-number="2.3.4"><h3 data-number="2.3.4" class="anchored" data-anchor-id="other-data-sources">
-<span class="header-section-number">2.3.4</span> Other data sources</h3>
+</section><section id="human-microbiome-compendium" class="level3" data-number="2.3.4"><h3 data-number="2.3.4" class="anchored" data-anchor-id="human-microbiome-compendium">
+<span class="header-section-number">2.3.4</span> Human microbiome compendium</h3>
+<p><a href="https://seandavi.github.io/MicroBioMap/">MicroBioMap</a> dataset includes over 170k samples of publicly available 16S rRNA amplicon sequencing data, all processed using the same pipeline and reference database<span class="citation" data-cites="Abdill2023">(<a href="#ref-Abdill2023" role="doc-biblioref"><strong>Abdill2023?</strong></a>)</span>. After installing the MicroBioMap package (see the <a href="https://github.com/seandavi/MicroBioMap#microbiome-compendium">original website</a> for instructions), you can load the compendium with</p>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-13_046901ec1e0044800a20aa44d5e55839">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">MicroBioMap</span><span class="op">)</span></span>
+<span><span class="va">cpd</span> <span class="op">&lt;-</span> <span class="fu">getCompendium</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This returns a TreeSummarizedExperiment object. Currently, the “tree” part of the TreeSummarizedExperiment is not populated, but that is on the roadmap<span class="citation" data-cites="compendiumpackage">(<a href="#ref-compendiumpackage" role="doc-biblioref"><strong>compendiumpackage?</strong></a>)</span>.</p>
+<p>After loading the compendium, you will have immediate access to nearly 170,000 microbiome samples of publicly available 16S rRNA amplicon sequencing data, all processed using the same pipeline and reference database. For more use examples in R/Bioconductor, see the <a href="https://seandavi.github.io/MicroBioMap/articles/overview.html">MicroBioMap vignette</a>.</p>
+</section><section id="other-data-sources" class="level3" data-number="2.3.5"><h3 data-number="2.3.5" class="anchored" data-anchor-id="other-data-sources">
+<span class="header-section-number">2.3.5</span> Other data sources</h3>
 <p>The current collections provide access to vast microbiome data resources. The output has to be converted into TreeSE/MAE separately.</p>
 <ul>
 <li>
@@ -791,14 +801,14 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <p>You can find full workflow script without further explanations and comments from <a href="https://github.com/microbiome/OMA/blob/master/dada2_workflow.Rmd">here</a></p>
 <p>Load required packages.</p>
 <div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/dada2_2_87b518aa058f3d138b40119889374218">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/microbiome/mia">mia</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/microbiome/mia">mia</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.github.io/BiocManager/">BiocManager</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.org/packages/Biostrings">Biostrings</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Create arbitrary example sample metadata like it was done in the tutorial. Usually, sample metadata is imported as a file.</p>
 <div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/dada2_3_3529c205e31079e43bed72ceca68c078">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">samples.out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html">rownames</a></span><span class="op">(</span><span class="va">seqtab.nochim</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">samples.out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html">rownames</a></span><span class="op">(</span><span class="va">seqtab.nochim</span><span class="op">)</span></span>
 <span><span class="va">subject</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/lapply.html">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span><span class="op">(</span><span class="va">samples.out</span>, <span class="st">"D"</span><span class="op">)</span>, <span class="va">`[`</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">gender</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/substr.html">substr</a></span><span class="op">(</span><span class="va">subject</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">subject</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/substr.html">substr</a></span><span class="op">(</span><span class="va">subject</span>,<span class="fl">2</span>,<span class="fl">999</span><span class="op">)</span></span>
@@ -810,7 +820,7 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 </div>
 <p>Convert data into right format and create a <em>TreeSE</em> object.</p>
 <div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/dada2_4_9a7b53f13eccb056b9126921ad39e92c">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create a list that contains assays</span></span>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create a list that contains assays</span></span>
 <span><span class="va">counts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/t.html">t</a></span><span class="op">(</span><span class="va">seqtab.nochim</span><span class="op">)</span></span>
 <span><span class="va">counts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span><span class="op">(</span><span class="va">counts</span><span class="op">)</span></span>
 <span><span class="va">assays</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/SimpleList-class.html">SimpleList</a></span><span class="op">(</span>counts <span class="op">=</span> <span class="va">counts</span><span class="op">)</span></span>
@@ -830,7 +840,7 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 </div>
 <p>Add sequences into <em>referenceSeq</em> slot and convert rownames into simpler format.</p>
 <div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/dada2_5_8744cfb7f57608fccf8783852f69e21e">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Convert sequences into right format</span></span>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Convert sequences into right format</span></span>
 <span><span class="va">dna</span> <span class="op">&lt;-</span> <span class="fu">Biostrings</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/Biostrings/man/XStringSet-class.html">DNAStringSet</a></span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html">rownames</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span> <span class="op">)</span></span>
 <span><span class="co"># Add sequences into referenceSeq slot</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/TreeSummarizedExperiment/man/TreeSummarizedExperiment-accessor.html">referenceSeq</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">dna</span></span>
@@ -868,7 +878,7 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 </ul>
 <p>After you have set up the CSV files, you can read them in R:</p>
 <div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/importingcsv1_534c6bab36fc3a78f9e1a5c8dbd764ee">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">count_file</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"assay_taxa.csv"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">count_file</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"assay_taxa.csv"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span>
 <span><span class="va">tax_file</span>    <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"rowdata_taxa.csv"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span>
 <span><span class="va">sample_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"coldata.csv"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span>
 <span></span>
@@ -886,7 +896,7 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <p><strong>Always ensure that the tables have rownames!</strong> The <em>TreeSE</em> constructor compares rownames and ensures that, for example, right samples are linked with right patient.</p>
 <p>Also ensure that the row and column names match one-to-one between abundance table, rowdata, and coldata:</p>
 <div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/importingcsv2_315b7c27b65d837db86f250663a22c47">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Match rows and columns</span></span>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Match rows and columns</span></span>
 <span><span class="va">counts</span> <span class="op">&lt;-</span> <span class="va">counts</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html">rownames</a></span><span class="op">(</span><span class="va">tax</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html">rownames</a></span><span class="op">(</span><span class="va">samples</span><span class="op">)</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co"># Let us ensure that the data is in correct (numeric matrix) format:</span></span>
@@ -895,7 +905,7 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <p>If you hesitate about the format of the data, you can compare to one of the available demonstration datasets, and make sure that your data components have the same format.</p>
 <p>There are many different source files and many different ways to read data in R. One can do data manipulation in R as well. Investigate the entries as follows.</p>
 <div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/demodata_e22fffac04dfa9dd2ac948dc1bde28d4">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># coldata rownames match assay colnames</span></span>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># coldata rownames match assay colnames</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/all.html">all</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html">rownames</a></span><span class="op">(</span><span class="va">samples</span><span class="op">)</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html">colnames</a></span><span class="op">(</span><span class="va">counts</span><span class="op">)</span><span class="op">)</span> <span class="co"># our dataset</span></span>
 <span><span class="co">##  [1] TRUE</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">samples</span><span class="op">)</span> <span class="co"># should be data.frame or DataFrame</span></span>
@@ -921,7 +931,7 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 </ul>
 <p>The <code>SimpleList</code> could be used to include multiple alternative assays, if necessary.</p>
 <div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/importingcsv3_871c0f10bf075e19aa68767e8462e3b9">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create a TreeSE</span></span>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create a TreeSE</span></span>
 <span><span class="va">tse_taxa</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/TreeSummarizedExperiment/man/TreeSummarizedExperiment-constructor.html">TreeSummarizedExperiment</a></span><span class="op">(</span>assays <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/SimpleList-class.html">SimpleList</a></span><span class="op">(</span>counts <span class="op">=</span> <span class="va">counts</span><span class="op">)</span>,</span>
 <span>                                     colData <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html">DataFrame</a></span><span class="op">(</span><span class="va">samples</span><span class="op">)</span>,</span>
 <span>                                     rowData <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html">DataFrame</a></span><span class="op">(</span><span class="va">tax</span><span class="op">)</span><span class="op">)</span></span>
@@ -949,7 +959,7 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <span class="header-section-number">2.4.4</span> Constructing MultiAssayExperiment</h3>
 <p>To construct a <em>MultiAssayExperiment</em> object, just combine multiple <em>TreeSE</em> data containers. Here we import metabolite data from the same study.</p>
 <div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/importingcsv4_73962e9c3467680bd3934c87e64dbb0c">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">count_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"assay_metabolites.csv"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">count_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"assay_metabolites.csv"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span>
 <span><span class="va">sample_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"coldata.csv"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Load files</span></span>
@@ -979,7 +989,7 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 </div>
 <p>Now we can combine these two experiments into <em>MAE</em>.</p>
 <div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/importingcsv5_f75a976800fad6428ac76a8f5ecd06a0">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create an ExperimentList that includes experiments</span></span>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create an ExperimentList that includes experiments</span></span>
 <span><span class="va">experiments</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://waldronlab.io/MultiAssayExperiment/reference/ExperimentList.html">ExperimentList</a></span><span class="op">(</span>microbiome <span class="op">=</span> <span class="va">tse_taxa</span>, </span>
 <span>                              metabolite <span class="op">=</span> <span class="va">tse_metabolite</span><span class="op">)</span></span>
 <span></span>
@@ -1018,14 +1028,14 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <li>tree file: phylogenetic tree</li>
 </ul>
 <p>To begin with, we store the data in a local directory within the working directory, such as <em>data/</em>, and define the source file paths.</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-13_de5533edc8e95f5c0112cb96ced17ad8">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">biom_file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Aggregated_humanization2.biom"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-14_e096fdec735f99b7073014119fffbc11">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">biom_file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Aggregated_humanization2.biom"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span>
 <span><span class="va">sample_meta_file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Mapping_file_ADHD_aggregated.csv"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span>
 <span><span class="va">tree_file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Data_humanization_phylo_aggregation.tre"</span>, package <span class="op">=</span> <span class="st">"OMA"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we can read in the biom file and convert it into a TreeSE object. In addition, we retrieve the rank names from the prefixes of the feature names and then remove them with the <code>rankFromPrefix</code> and <code>removeTaxaPrefixes</code> optional arguments.</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-14_a05a29a1f668b9ec06abbbd6df90634a">
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/microbiome/mia">mia</a></span><span class="op">)</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-15_b10d75c99d9c4d0d6eca94f9fe4f28cc">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/microbiome/mia">mia</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># read biom and convert it to TreeSE</span></span>
 <span><span class="va">tse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/makeTreeSEFromBiom.html">loadFromBiom</a></span><span class="op">(</span><span class="va">biom_file_path</span>,</span>
@@ -1051,8 +1061,8 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <span><span class="co">##  colTree: NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>assays</code> slot includes a list of abundance tables. The imported abundance table is named as “counts”. Let us inspect only the first cols and rows.</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-15_e18f3671d3c6d51442ca9a042a41e015">
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">assay</a></span><span class="op">(</span><span class="va">tse</span>, <span class="st">"counts"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-16_b87c586c194c32714d49e1edede209ce">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">assay</a></span><span class="op">(</span><span class="va">tse</span>, <span class="st">"counts"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span></span>
 <span><span class="co">##            A110  A111  A12</span></span>
 <span><span class="co">##  1726470  17722 11630    0</span></span>
 <span><span class="co">##  1726471  12052     0 2679</span></span>
@@ -1060,8 +1070,8 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 </div>
 <p>The <code>rowdata</code> includes taxonomic information from the biom file. The <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code> command shows just the beginning of the data table for an overview.</p>
 <p><code><a href="https://rdrr.io/pkg/knitr/man/kable.html">knitr::kable()</a></code> helps print the information more nicely.</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-16_3f5fcdb8ecadb3e530fb13dbfd6fa1eb">
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">rowData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-17_ad9fbd62f4e3b46c61e304489bbb6137">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">rowData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">##  DataFrame with 6 rows and 6 columns</span></span>
 <span><span class="co">##             taxonomy1          Phylum            Class              Order</span></span>
 <span><span class="co">##           &lt;character&gt;     &lt;character&gt;      &lt;character&gt;        &lt;character&gt;</span></span>
@@ -1081,8 +1091,8 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <span><span class="co">##  17264724      Bacteroidaceae     Bacteroides"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We further polish the feature names by removing unnecessary characters and then replace the original rowData with its updated version.</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-17_c7db62c335a4d5864529713644e36c32">
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Genus level has additional '\"', so let's delete that also</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-18_f9a7386edb1188971fca8e326eebec03">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Genus level has additional '\"', so let's delete that also</span></span>
 <span><span class="va">rowdata_modified</span> <span class="op">&lt;-</span> <span class="fu">BiocParallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocParallel/man/bplapply.html">bplapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">rowData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span>, </span>
 <span>                                           FUN <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="va"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span>, </span>
 <span>                                           pattern <span class="op">=</span> <span class="st">'\"'</span><span class="op">)</span></span>
@@ -1112,13 +1122,13 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <span><span class="co">##  17264724      Bacteroidaceae     Bacteroides</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We notice that the imported biom file did not contain any colData yet, so only an empty dataframe appears in this slot.</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-18_42aef1ba37ec0c26d1978c9720178200">
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-19_8b388c5d8b177565963ab60e0e9c8929">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">##  DataFrame with 6 rows and 0 columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let us add colData from the sample metadata, which is stored in a CSV file.</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-19_e7bb5b12179abdbfcd29ea61d86b2f7a">
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># CSV file with colnames in the first row and rownames in the first column</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-20_31df222dd8bc105a68613a539316dd62">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># CSV file with colnames in the first row and rownames in the first column</span></span>
 <span><span class="va">sample_meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="va">sample_meta_file_path</span>,</span>
 <span>                        sep <span class="op">=</span> <span class="st">","</span>, row.names <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span></span>
@@ -1127,8 +1137,8 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html">DataFrame</a></span><span class="op">(</span><span class="va">sample_meta</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now the colData includes the sample metadata.</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-20_50ac853b8e61272ce0e6f93b376ed6ea">
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-21_503e8a9076ebd62053032aa07516f8fb">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">##  DataFrame with 6 rows and 4 columns</span></span>
 <span><span class="co">##         Treatment      Cohort TreatmentxCohort Description</span></span>
 <span><span class="co">##       &lt;character&gt; &lt;character&gt;      &lt;character&gt; &lt;character&gt;</span></span>
@@ -1141,8 +1151,8 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 </div>
 <p>Finally, we add a phylogenetic tree to the rowData slot. Such feature is available only in TreeSE objects. Similarly, Trees specifying the sample hierarchy can be stored in the colTree slot.</p>
 <p>Here, we read in the file containing the phylogenetic tree and insert it in corresponding slot of the TreeSE object.</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-21_761f954a8e044f1885df039e90619e78">
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Reads the tree file</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-22_e10de9aec133216f6ac9a4199eb48559">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Reads the tree file</span></span>
 <span><span class="va">tree</span> <span class="op">&lt;-</span> <span class="fu">ape</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ape/man/read.tree.html">read.tree</a></span><span class="op">(</span><span class="va">tree_file_path</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Add tree to rowTree</span></span>
@@ -1167,14 +1177,14 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <span><span class="co">##  colTree: NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now the rowTree slot contains the phylogenetic tree:</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-22_2a073935ff09a21ac78f2d3831ceafe6">
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/TreeSummarizedExperiment/man/TreeSummarizedExperiment-accessor.html">rowTree</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-23_5f3ec02de32844c05ef68637bd129abb">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/TreeSummarizedExperiment/man/TreeSummarizedExperiment-accessor.html">rowTree</a></span><span class="op">(</span><span class="va">tse</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section><section id="conversions-between-data-formats-in-r" class="level3" data-number="2.4.6"><h3 data-number="2.4.6" class="anchored" data-anchor-id="conversions-between-data-formats-in-r">
 <span class="header-section-number">2.4.6</span> Conversions between data formats in R</h3>
 <p>If the data has already been imported in R in another format, it can be readily converted into <code>TreeSummarizedExperiment</code>, as shown in our next example. Note that similar conversion functions to <code>TreeSummarizedExperiment</code> are available for multiple data formats via the <code>mia</code> package (see makeTreeSummarizedExperimentFrom* for phyloseq, Biom, and DADA2).</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-23_63615a0f2f3419f9cd614260306b1ba9">
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/microbiome/mia">mia</a></span><span class="op">)</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-24_63c57eb7967bac8913544b7c01e1b74e">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/microbiome/mia">mia</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># phyloseq example data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">GlobalPatterns</span>, package<span class="op">=</span><span class="st">"phyloseq"</span><span class="op">)</span> </span>
@@ -1186,8 +1196,8 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <span><span class="co">##  tax_table()   Taxonomy Table:    [ 19216 taxa by 7 taxonomic ranks ]</span></span>
 <span><span class="co">##  phy_tree()    Phylogenetic Tree: [ 19216 tips and 19215 internal nodes ]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-24_edec0edc584cc4b6666a60f3e99ee81b">
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># convert phyloseq to TSE</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-25_d5eebdc5dabe88e3735554c22bde1d01">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># convert phyloseq to TSE</span></span>
 <span><span class="va">GlobalPatterns_TSE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/makeTreeSEFromPhyloseq.html">makeTreeSummarizedExperimentFromPhyloseq</a></span><span class="op">(</span><span class="va">GlobalPatterns_phyloseq</span><span class="op">)</span> </span>
 <span><span class="va">GlobalPatterns_TSE</span></span>
 <span><span class="co">##  class: TreeSummarizedExperiment </span></span>
@@ -1207,8 +1217,8 @@ Vatanen, Tommi, Aleksandar D. Kostic, Eva d’Hennezel, Heli Siljander, Eric A. 
 <span><span class="co">##  colTree: NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can also convert <code>TreeSummarizedExperiment</code> objects into <code>phyloseq</code> with respect to the shared components that are supported by both formats (i.e.&nbsp;taxonomic abundance table, sample metadata, taxonomic table, phylogenetic tree, sequence information). This is useful for instance when additional methods are available for <code>phyloseq</code>.</p>
-<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-25_33bbb74339a0ccdb68a833d12439f640">
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># convert TSE to phyloseq</span></span>
+<div class="cell" data-layout-align="center" data-hash="04_containers_cache/html/unnamed-chunk-26_619bdd909dafdffb603123346bc3acee">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># convert TSE to phyloseq</span></span>
 <span><span class="va">GlobalPatterns_phyloseq2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mia/man/makePhyloseqFromTreeSE.html">makePhyloseqFromTreeSummarizedExperiment</a></span><span class="op">(</span><span class="va">GlobalPatterns_TSE</span><span class="op">)</span> </span>
 <span><span class="va">GlobalPatterns_phyloseq2</span></span>
 <span><span class="co">##  phyloseq-class experiment-level object</span></span>
